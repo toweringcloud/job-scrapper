@@ -3,5 +3,5 @@
 python flask scrapper using beautifulsoup
 
 -   indeed with sample snapshots
--   workok with beautifulsoup
+-   remoteok with beautifulsoup
 -   weworkremotely with beautifulsoup
