@@ -1,0 +1,66 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Job Scrapper</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/@picocss/pico@1.5.10/css/pico.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<main class="container">
+			<hgroup>
+				<h1>
+					Search Results for
+					<span style="color: tomato">{{keyword}}</span>:
+				</h1>
+				<hr />
+				<a href="/"
+					><i class="fa-solid fa-house">&nbsp;Go To Home</i></a
+				>
+				<!-- &nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="/reset"
+					><i class="fa-solid fa-refresh">&nbsp;Reset Cache</i></a
+				> -->
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<a target="_blank" href="/export?keyword={{keyword}}"
+					><i class="fa-solid fa-file-export"
+						>&nbsp;Export to file</i
+					></a
+				>
+			</hgroup>
+			<figure>
+				<table role="grid">
+					<thead>
+						<tr>
+							<th>Position</th>
+							<th>Company</th>
+							<th>Location</th>
+							<th>Detail</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for job in jobs %}
+						<tr>
+							<td>{{job.position}}</td>
+							<td>{{job.company}}</td>
+							<td>{{job.location}}</td>
+							<td>
+								<a href="{{job.detail}}" target="_blank"
+									>Apply &rarr;</a
+								>
+							</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</figure>
+		</main>
+	</body>
+</html>

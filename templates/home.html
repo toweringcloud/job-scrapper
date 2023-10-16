@@ -1,0 +1,46 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Job Scrapper</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/@picocss/pico@1.5.10/css/pico.min.css"
+			rel="stylesheet"
+		/>
+		<script>
+			function searchJob() {
+				const sel = document.querySelector("select");
+				const val = sel[sel.selectedIndex].value;
+				if (val !== "") {
+					document.querySelector("input").value = val;
+					document.querySelector("input").readOnly = true;
+					document.querySelector("button").disabled = true;
+					document.querySelector("form").submit();
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<main class="container">
+			<h1>Job Scrapper</h1>
+			<h4>What job do you want to search?</h4>
+			<form action="/search">
+				<select onChange="javascript:searchJob()">
+					<option value="">::::: Select Favorite Job :::::</option>
+					<option value="flutter">Flutter Mobile Developer</option>
+					<option value="golang">Golang System Engineer</option>
+					<option value="python">Python Fullstack Developer</option>
+					<option value="react">React Frontend Engineer</option>
+					<option value="rust">Rust Backend Architect</option>
+				</select>
+				<input
+					type="text"
+					name="keyword"
+					placeholder="Write keyword : flutter, golang, python, react, rust, ..."
+				/>
+				<button>Search</button>
+			</form>
+		</main>
+	</body>
+</html>
