@@ -30,7 +30,7 @@ def search():
   if keyword in db:
     jobs = db[keyword]
   else:
-    jobs_a = indeed(keyword, True)
+    jobs_a = indeed(keyword, False)
     jobs_b = remoteok(keyword)
     jobs_c = weworkremotely(keyword)
     jobs = jobs_a + jobs_b + jobs_c

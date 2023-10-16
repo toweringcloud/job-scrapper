@@ -2,6 +2,6 @@
 
 python flask scrapper using beautifulsoup
 
--   indeed with sample snapshots
+-   indeed with 403 troubleshooting
 -   workok with beautifulsoup
 -   weworkremotely with beautifulsoup
